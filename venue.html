@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#233f38" />
+    <title>场馆模型 · 江岸见</title>
+    <link rel="manifest" href="app.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icon192.png" />
+    <link rel="icon" href="assets/icon192.png" />
+    <link rel="stylesheet" href="assets/app.css" />
+    <link rel="stylesheet" href="assets/navigator.css" />
+    <link rel="stylesheet" href="assets/reception.css">
+    <link rel="stylesheet" href="assets/porpoise.css">
+  </head>
+  <body data-page="venue">
+    <header>
+      <a class="brand" href="index.html" data-nav="home" aria-label="江岸见 · 回到江豚接待台"><img src="assets/receptionist.webp" alt="" />江岸见<span class="homeLabel">接待台</span></a>
+      <nav>
+        <a href="index.html?view=route" data-nav="index"
+          ><svg
+            width="21"
+            height="21"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linejoin="round"
+          >
+            <path d="m3 5 6-2 6 3 6-2v15l-6 2-6-3-6 2zM9 3v15m6-12v15" /></svg
+          ><span>地图</span></a
+        ><a href="trip.html" data-nav="trip"
+          ><svg
+            width="21"
+            height="21"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linejoin="round"
+          >
+            <rect x="5" y="4" width="14" height="17" rx="2" />
+            <path d="M9 4V2m6 2V2M8 10h8m-8 5h6" /></svg
+          ><span>行程</span></a
+        ><a href="cards.html" data-nav="cards"
+          ><svg
+            width="21"
+            height="21"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 16 5-5 5 5 3-3 5 4" />
+            <circle cx="16" cy="9" r="1" /></svg
+          ><span>明信片</span></a
+        >
+      <a href="reception.html" data-nav="reception" aria-current="page"><svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4m0 1c4-4 10 4 15 0v10c-5 4-11-4-15 0"/></svg><span>赛事接待</span></a>
+      </nav>
+    </header>
+
+    <main inert id="venuePage">
+      <div class="venueBar"><button data-nav="index">← 武汉地图</button><label class="sceneSelect">切换地点 <select id="modelSelect"></select></label><div id="venueSwitch" role="group" aria-label="选择场地"><button data-venue="zhimin">智民里</button><button data-venue="packing">平和打包厂</button></div></div>
+      <div class="venueExhibit">
+        <section class="venueStage" aria-label="建筑立体模型">
+          <div class="modelTheatre"><div id="modelHost" tabindex="0" aria-label="拖动旋转模型，方向键转动，加减键缩放"></div>
+          <div class="viewControls" aria-label="模型视角"><button id="rotateLeft" aria-label="向左旋转">↶</button><button id="rotateRight" aria-label="向右旋转">↷</button><button id="zoomOut" aria-label="缩小模型">−</button><button id="zoomIn" aria-label="放大模型">＋</button><button id="resetView">复位</button></div>
+          </div><section id="floorLab" hidden><div class="floorHeader"><strong>黄鹤楼拆解台</strong><button id="toggleFloors">展开五层</button></div><label class="floorRange">楼层间距 <input id="floorGap" type="range" min="0" max="100" step="1" value="0"></label><div id="floorKeys"></div><p id="floorNote" aria-live="polite"></p></section>
+        </section>
+        <section class="venueInfo"><p id="venueRole"></p><h1 id="venueName"></h1><p id="venueStory"></p>
+          <div class="modelAngles" id="angles" aria-label="特色视角"></div>
+          <div class="visitActions"><button class="primary" id="checkIn">打卡收藏</button><button id="venueRoute">去这里 →</button></div><div class="visitLinks"><button id="visitCity">建设我的武汉 ↗</button><button id="seePostcard">翻明信片 ↗</button><button id="venueReception">了解比赛 ↗</button></div><details class="modelFoot"><summary>模型说明</summary><p id="modelHelp"></p><p id="venueSource"></p></details>
+        </section>
+      </div>
+    </main>
+    <script src="assets/places.js"></script><script src="assets/three.min.js"></script><script src="assets/neighbourhoods.js"></script><script src="assets/street-model.js"></script><script src="assets/city-models.js"></script><script src="assets/building-plans.js"></script><script src="assets/building-collection.js"></script><script src="assets/street-studies.js"></script><script src="assets/architecture.js"></script><script src="assets/city-game.js"></script><script src="assets/tower-lab.js"></script><script src="assets/study-guide.js"></script><script src="assets/venue.js"></script><script src="assets/journal.js"></script><script src="assets/reception.js"></script><script src="assets/porpoise.js"></script><script src="assets/app.js"></script>
+  </body></html>

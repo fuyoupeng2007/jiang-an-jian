@@ -1,0 +1,21 @@
+.collection,.stampBook{max-width:1200px;margin:auto;padding:clamp(18px,3.5vw,48px) clamp(16px,4vw,50px) 80px}
+.collection .atlasHeading{margin:0 0 22px;gap:16px;align-items:center}.atlasHeading h1,.stampBook h1{font:400 clamp(35px,5vw,57px)/1.14 LongCangLocal,serif;margin:0}
+.albumDoors{display:grid;grid-template-columns:1.45fr 1fr;gap:14px;margin:0 0 22px}
+.albumDoors a{display:flex;align-items:center;position:relative;isolation:isolate;overflow:hidden;min-height:103px;padding:18px clamp(16px,2.4vw,30px);border-radius:12px;background:#e9e6d6;text-decoration:none;color:#304e40}
+.albumDoors .buildDoor{background:#264d42;color:#fff6df}.albumDoors span{position:relative;z-index:1}.albumDoors img{height:90%;max-width:36%;object-fit:contain;position:absolute;right:10%;bottom:0}
+.albumDoors strong,.albumDoors small{display:block}.albumDoors strong{font:400 clamp(22px,2.7vw,34px)/1.3 var(--reading-font)}.albumDoors small,#recordCount{font:400 15px/1.6 var(--reading-font);margin:5px 0 0}.albumDoors i{margin-left:auto;font:20px sans-serif}
+.albumFilters{border-bottom:1px solid #cbd0be;padding:0 0 12px}.albumFilters summary{cursor:pointer;font:400 16px/1.55 var(--reading-font)}.albumFilters .shelf{margin-top:14px}
+.albumFilters .filters{display:flex;flex-wrap:wrap}.collection .cardArt .miniatureCard{object-fit:contain;background:#eeeade;padding:6% 9%}
+.collection .gallery,#recordGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(225px,100%),1fr));gap:24px 20px}
+.collection .cardLabel{padding:10px 0}.collection .cardLabel b,#recordGrid strong{font:500 17px/1.5 var(--reading-font)}.collection .cardLabel button{font:400 14px/1.4 var(--reading-font)}
+.stampTop{margin-bottom:20px}.stampTop a{color:#426252}.stampHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 26px}#recordGrid button{background:#faf8ed;border:1px solid #d5d6c6;padding:12px;border-radius:9px;text-align:left}#recordGrid img{width:100%;aspect-ratio:1.7;object-fit:cover;border-radius:5px}#recordGrid small,#recordGrid strong{display:block;margin-top:5px}
+@media(max-width:680px){.albumDoors{gap:8px;grid-template-columns:1.15fr 1fr}.albumDoors a{min-height:84px;padding:12px}.albumDoors strong{font-size:21px}.albumDoors small{font-size:13px}.albumDoors img{display:none}.collection .gallery,#recordGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 12px}.collection .atlasHeading{margin-bottom:14px}.collection .cardLabel{align-items:flex-start;gap:4px}.collection .cardLabel b{font-size:16px}.collection .cardLabel button{white-space:nowrap}}
+@media(max-width:680px){
+  .albumDoors{grid-template-columns:1fr;gap:8px;margin-bottom:16px}
+  .albumDoors a{min-height:54px;padding:12px 16px}
+  .albumDoors .buildDoor{min-height:80px}
+  .albumDoors .buildDoor img{display:block;height:76px;right:30px}
+  .albumDoors strong{font-size:21px;white-space:nowrap}.albumDoors small{margin-top:2px}
+  .albumDoors a:nth-child(2) span{display:flex;align-items:baseline;gap:12px}
+  .albumDoors .buildDoor span{max-width:65%}
+}

@@ -1,0 +1,137 @@
+:root {
+  --card-title: #29473e;
+  --card-copy: #394b43;
+  --card-note: #52645a;
+  --reading-font: WenKaiLocal, "Songti SC", serif;
+}
+.landmarkModel { width:54px; height:42px; object-fit:contain; vertical-align:middle; }
+.leaflet-container .landPin .landmarkModel { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 1px 1px #fff); }
+#timeline .landmarkModel { width:100%; max-width:60px; height:44px; }
+#jStamp .landmarkModel { width:100%;height:100%; }
+.landPin.venuePin { border:2px solid #226ca6; background:#eaf7ff; border-radius:12px 12px 12px 4px; padding:2px; box-shadow:0 2px 5px #1e577b45; }
+.landPin.venuePin:after { content:"";position:absolute; bottom:-5px;left:calc(50% - 4px);width:7px;height:7px;background:#226ca6;transform:rotate(45deg);z-index:-1; }
+.leaflet-tooltip.venueTag { background:#235f8b; color:#fff; border:0; padding:3px 7px; font:500 12px/1.4 system-ui,sans-serif; }
+button#showVenues { color:#205d89; background:#e7f3fa; font-weight:600; }
+#receptionPage:not([data-topic="spu"]) .receptionHero figure { background:radial-gradient(ellipse at 50% 40%,#faf3df,#dce1d0); }
+#receptionPage:not([data-topic="spu"]) #topicPhoto { object-fit:contain; padding:10px 15px 45px; }
+#exploreModel { position:absolute;right:10px;bottom:10px;background:#f9f6e9;color:#20483e; font-size:14px;padding:6px 9px; }
+#raceGuide { margin-top:20px; padding:clamp(18px,3vw,36px); background:#fffdf3; border:1px solid #d9d4bd; border-radius:12px; }
+#raceGuide h2 { font:400 27px/1.3 var(--reading-font); }
+.raceDates { margin:20px 0; padding:0; list-style:none; display:grid;grid-template-columns:repeat(4,1fr);gap:18px; }
+.raceDates li { border-top:2px solid #819b85; padding-top:12px; }
+.raceDates time { display:block; color:#426957;font-size:14px; }
+.raceDates b { font:500 19px/1.5 var(--reading-font); }
+.raceDates p,.raceQuestions p { font:400 16px/1.7 var(--reading-font); color:var(--card-copy); margin-top:6px; }
+.raceQuestions details { border-top:1px solid #d7dac9; padding:11px 0; }
+.raceQuestions summary { cursor:pointer; font:400 18px/1.5 var(--reading-font); }
+#venuePage { max-width:1320px; margin:auto; padding:22px clamp(12px,4vw,58px) 34px; }
+.venueBar,.venueBar>div,.viewControls { display:flex;gap:5px;align-items:center; }
+.venueBar { justify-content:space-between; margin-bottom:13px; }
+.venueBar button { border:1px solid #c7d2c4;background:#faf9ef;border-radius:18px;padding:7px 13px;font:400 16px/1.3 var(--reading-font); }
+.venueBar [aria-pressed=true] { background:#285449;color:#fff; }
+.venueExhibit { display:grid; grid-template-columns:minmax(0,2.15fr) minmax(230px,1fr);border:1px solid #cdd1bf;border-radius:15px;overflow:hidden;background:#fffdf2; }
+.venueStage { position:relative; min-width:0; background-color:#e9e7d6; background-image:linear-gradient(#9da99119 1px,transparent 1px),linear-gradient(90deg,#9da99119 1px,transparent 1px),radial-gradient(ellipse at center,#faf2dd,transparent); background-size:23px 23px,23px 23px,100% 100%; }
+#modelHost { position:relative; overflow:hidden;height:clamp(360px,62vh,620px);touch-action:none; }
+#modelHost canvas {width:100%;height:100%;cursor:grab;touch-action:none;}
+#modelHost canvas:active {cursor:grabbing;}
+.modelFallback { width:100%; height:100%;padding:24px;object-fit:contain; }
+.buildingLabel { position:absolute; pointer-events:none; transform:translate(-50%,-90%);border-radius:5px; padding:1px 5px; background:#243d34df;color:#fffae8; font:600 12px/1.45 system-ui,sans-serif; }
+.viewControls { position:absolute;bottom:10px;left:50%;transform:translateX(-50%);padding:3px;background:#fcf9edeb;border:1px solid #c4c6b5;border-radius:17px; }
+.viewControls button { border:0;padding:5px 10px;min-width:33px;white-space:nowrap;background:transparent;font:400 15px/1.25 var(--reading-font); }
+.venueInfo { padding:clamp(19px,3vw,37px); align-self:center; }
+.venueInfo h1 { font:400 clamp(38px,4.5vw,62px)/1.18 LongCangLocal,serif;margin:7px 0 16px; }
+#venueRole { color:#22628d;font:500 15px/1.5 var(--reading-font); }
+#venueStory { font:400 18px/1.75 var(--reading-font); }
+#modelHelp,#venueSource { margin-top:12px;color:#58685c;font:400 14px/1.6 var(--reading-font); }
+.venueInfo button {margin:14px 4px 0 0;}
+@media(max-width:800px){
+  .venueExhibit {grid-template-columns:1fr;} #modelHost {height:clamp(235px,45vh,410px);}
+  .raceDates {grid-template-columns:1fr 1fr;} .venueBar button {font-size:14px;padding:7px 9px;}
+  #receptionPage:not([data-topic="spu"]) .receptionHero figure{height:clamp(210px,53vw,310px);}
+  #receptionPage:not([data-topic="spu"]) .receptionHero figcaption{font-size:11px;max-width:55%;}
+}
+.brand img, .birdCall img, .birdHead img { object-fit: contain; border-radius: 50%; }
+.sheetCopy h1, .jCoverLabel h1 {
+  font: 400 clamp(34px, 3.4vw, 46px)/1.18 LongCangLocal, var(--reading-font);
+  letter-spacing: .02em;
+  font-synthesis: none;
+}
+.sheetCopy h1 { color: var(--card-title); margin-block: 5px 9px; }
+.sheetCopy .leafLead, .sheetCopy .leafBody, .jPanel p {
+  font: 400 17px/1.72 var(--reading-font);
+  color: var(--card-copy);
+  font-synthesis: none;
+}
+.sheetCopy .leafLead { margin: 0 36px 4px 0; }
+.leafLead:empty { display: none; }
+.sheetCopy > span, .bookTop > span, .cardLabel button { font: 400 14px/1.4 var(--reading-font); }
+.bookTop > span { color: #fffaf0; font-size: 17px; }
+.sheetCopy > span, .cardLabel button { color: var(--card-note); }
+.cardLabel b { font: 400 20px/1.4 var(--reading-font); color: var(--card-title); }
+.filmStrip span { font: 400 13px/1.3 var(--reading-font); color: #fffaf0; }
+#receptionPage { max-width: 1190px; margin: 0 auto; padding: 28px clamp(16px,4vw,54px) 44px; }
+.receptionNav, #choices { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.receptionNav { width: fit-content; margin: 0 0 17px; padding: 4px; border: 1px solid #cbd3c7; border-radius: 24px; }
+.receptionNav button, #choices button { border: 0; border-radius: 20px; background: transparent; color: #394d43; padding: 7px 15px; font: 400 15px/1.35 var(--reading-font); }
+.receptionNav [aria-pressed="true"], #choices [aria-pressed="true"] { background: #244d42; color: #fffdf5; }
+.receptionHero { display: grid; grid-template-columns: 1.08fr 1fr; overflow: hidden; background: #21473f; border-radius: 16px; color: #fffaf0; }
+.receptionIntro { align-self: center; padding: clamp(22px,4vw,50px); }
+#introKicker { color: #d2dfc9; font: 400 14px/1.5 var(--reading-font); letter-spacing: .1em; }
+.receptionIntro h1 { font: 400 clamp(36px,3.8vw,48px)/1.16 LongCangLocal,var(--reading-font); margin: 13px 0 18px; color: inherit; text-wrap:balance; }
+#introLead, .receptionColumns p { font: 400 18px/1.75 var(--reading-font); }
+.receptionHero figure { position: relative; margin: 0; min-height: 255px; }
+.receptionHero figure img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+.receptionHero figcaption { position:absolute; bottom:12px; left:14px; background:#192f29e8; color:#fffdf6; font:400 12px/1.4 var(--reading-font); padding:4px 8px; border-radius:4px; }
+[data-topic="spu"] .receptionHero figure { background: #fefefe; }
+[data-topic="spu"] .receptionHero figure img { object-fit: contain; padding: 12px 30px 35px; }
+.receptionColumns { display:grid; grid-template-columns:1.55fr 1fr; gap:16px; margin-top:18px; }
+.receptionStory,.receptionContext { min-width:0; padding:clamp(18px,2.3vw,30px); border:1px solid #d9d4bd; border-radius:12px; background:#fffdf4; color:var(--card-copy); }
+.receptionContext { background:#e9ecdf; }
+.receptionColumns h2 { margin:0 0 16px; font:400 26px/1.28 var(--reading-font); color:var(--card-title); }
+#choices button { border:1px solid #cbd3c7; padding:6px 12px; }
+.choiceCopy { margin-top:18px; padding-top:16px; border-top:1px solid #dedacb; }
+.choiceCopy h3 { font:400 22px/1.4 var(--reading-font); margin:0 0 6px; color:var(--card-title); }
+.receptionContext summary { margin-top:14px; color:#285a48; cursor:pointer; }
+.receptionContext img { margin-top:8px; max-width:100%; border-radius:6px; }
+#toVenue { margin-top:14px; }
+.receptionFoot { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:18px; font:400 14px/1.6 var(--reading-font); color:var(--card-note); }
+.receptionFoot a { display:inline-block; color:#295b4f; margin-left:10px; }
+.receptionFoot button { flex-shrink:0; }
+@media(max-width:800px) {
+  body > header nav a { padding-inline:clamp(6px,3vw,16px); }
+  .sheetCopy .leafLead,.sheetCopy .leafBody,.jPanel p { font-size:16px; }
+  .receptionHero,.receptionColumns { grid-template-columns:1fr; }
+  #receptionPage { padding:14px 14px 30px; }
+  .receptionHero figure { min-height:0; height:clamp(160px,44vw,270px); }
+  .receptionIntro { padding:22px; }
+  .receptionIntro h1 { font-size:38px; margin:8px 0 12px; }
+  #introLead,.receptionColumns p { font-size:16px; }
+  .receptionNav button { padding:7px 13px; }
+  .receptionFoot { flex-wrap:wrap; }
+}
+
+.venueBar { flex-wrap:wrap; gap:8px; }
+.venueBar [hidden],.venueInfo [hidden]{display:none}
+.sceneSelect {display:flex;align-items:center;gap:8px;margin-left:auto;color:#4e6459;font:400 15px/1.5 var(--reading-font);}
+.sceneSelect select {max-width:min(55vw,290px);padding:7px 10px;border:1px solid #c2ccbd;border-radius:9px;background:#fffdf2;color:#284d42;font:inherit;}
+.modelAngles {display:flex;flex-wrap:wrap;gap:6px}
+.venueInfo .modelAngles button {margin:9px 0 0;padding:5px 9px;border:1px solid #bdcab9;background:#f1f2e5;color:#315649;border-radius:6px;font:400 15px/1.45 var(--reading-font);}
+.modelAngles button:hover,.modelAngles button:focus-visible {background:#e3eadb}
+.modelTurnFrame {position:absolute;width:min(88%,65vh);max-width:100%;aspect-ratio:6 / 5;top:48%;left:50%;pointer-events:none}
+.modelTurn {width:100%;height:100%;background-repeat:no-repeat;background-size:400% 100%;}
+#venueSource a{color:#386657;text-underline-offset:3px}
+#venuePage .viewControls button {min-height:38px;min-width:39px}
+@media(max-width:800px){.modelTurnFrame{width:min(88%,48vh)}.venueInfo h1{font-size:38px}.venueInfo{padding:17px 20px 21px}.venueInfo #venueStory{line-height:1.62}.venueBar>div{margin-left:auto}}
+#floorLab {margin-top:12px;padding:12px 13px;border:1px solid #cbcab3;border-radius:8px;background:#f5efdd;color:#423c30}
+#floorLab[hidden]{display:none}
+.floorHeader,.floorRange,#floorKeys {display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.floorHeader{justify-content:space-between}.floorHeader strong{font:600 17px/1.4 var(--reading-font)}
+#floorLab button{margin:0;padding:3px 8px;border:1px solid #cbbf9f;background:#fffbed;color:#534631;border-radius:6px;font:400 14px/1.4 var(--reading-font)}
+.floorRange{margin:8px 0;font:400 14px/1.4 var(--reading-font)}.floorRange input{flex:1;accent-color:#9a673c}
+#floorKeys button[aria-pressed=true]{background:#735937;color:white}#floorNote{margin:9px 0 0;font:400 15px/1.6 var(--reading-font)}
+.modelTheatre{position:relative}#floorLab{margin:0;border:0;border-top:1px solid #ccc7b0;border-radius:0;padding:10px clamp(12px,2vw,22px) 12px}
+#floorLab .floorHeader{justify-content:flex-start;gap:12px}#floorLab .floorRange{max-width:540px}
+#floorLab .floorHeader button{padding:4px 12px}#floorLab #floorKeys button{min-width:37px}
+@media(max-width:800px){body[data-model=tower] #modelHost{height:clamp(220px,36vh,325px)}}
+
+.venueInfo #venueStory{font-size:17px;line-height:1.85;margin:0 0 12px}.venueInfo .visitActions{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}.visitActions button{margin:0;padding:9px 15px}.venueInfo .visitLinks{display:flex;gap:16px;flex-wrap:wrap}.venueInfo .visitLinks button{border:0;background:none;padding:3px 0;margin:14px 0;color:#436559;font:400 15px/1.5 var(--reading-font)}.modelFoot{border-top:1px solid #dadccd;padding-top:11px;font:400 14px/1.65 var(--reading-font);color:#627366}.modelFoot summary{cursor:pointer}

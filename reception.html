@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#233f38" />
+    <title>赛事接待 · 江岸见</title>
+    <link rel="manifest" href="app.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icon192.png" />
+    <link rel="icon" href="assets/icon192.png" />
+    <link rel="stylesheet" href="assets/app.css" />
+    <link rel="stylesheet" href="assets/navigator.css" />
+    <link rel="stylesheet" href="assets/reception.css">
+    <link rel="stylesheet" href="assets/porpoise.css">
+  </head>
+  <body data-page="reception">
+    <header>
+      <a class="brand" href="index.html" data-nav="home" aria-label="江岸见 · 回到江豚接待台"><img src="assets/receptionist.webp" alt="" />江岸见<span class="homeLabel">接待台</span></a>
+      <nav>
+        <a href="index.html?view=route" data-nav="index"
+          ><svg
+            width="21"
+            height="21"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linejoin="round"
+          >
+            <path d="m3 5 6-2 6 3 6-2v15l-6 2-6-3-6 2zM9 3v15m6-12v15" /></svg
+          ><span>地图</span></a
+        ><a href="trip.html" data-nav="trip"
+          ><svg
+            width="21"
+            height="21"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linejoin="round"
+          >
+            <rect x="5" y="4" width="14" height="17" rx="2" />
+            <path d="M9 4V2m6 2V2M8 10h8m-8 5h6" /></svg
+          ><span>行程</span></a
+        ><a href="cards.html" data-nav="cards"
+          ><svg
+            width="21"
+            height="21"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 16 5-5 5 5 3-3 5 4" />
+            <circle cx="16" cy="9" r="1" /></svg
+          ><span>明信片</span></a
+        >
+      <a href="reception.html" data-nav="reception" aria-current="page"><svg aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4m0 1c4-4 10 4 15 0v10c-5 4-11-4-15 0"/></svg><span>赛事接待</span></a>
+      </nav>
+    </header>
+
+    <main inert id="receptionPage">
+      <div class="receptionNav" role="group" aria-label="接待主题">
+        <button data-topic="community">SPU 社区</button><button data-topic="spu">数命 SPU</button><button data-topic="saig">SAIG 比赛</button>
+      </div>
+      <section class="receptionHero" aria-labelledby="introTitle">
+        <div class="receptionIntro">
+          <p id="introKicker"></p><h1 id="introTitle"></h1><p id="introLead"></p>
+        </div>
+        <figure><img id="topicPhoto" alt=""><figcaption id="photoCaption"></figcaption><button id="exploreModel">进入立体模型 ↗</button></figure>
+      </section>
+      <div class="receptionColumns">
+        <section class="receptionStory">
+          <h2 id="sectionTitle"></h2>
+          <div id="choices" role="group" aria-label="展开讲解"></div>
+          <div class="choiceCopy" aria-live="polite"><h3 id="choiceTitle"></h3><p id="choiceCopy"></p></div>
+        </section>
+        <aside class="receptionContext">
+          <h2 id="contextTitle"></h2><p id="contextCopy"></p>
+          <details id="communityPlan"><summary>看智民里设计图</summary><img src="assets/community-plan.webp" loading="lazy" alt="智民里建筑群设计图，展示四栋楼与街巷的关系"></details>
+          <button class="primary" id="toVenue" hidden>把平和打包厂设为终点 →</button>
+        </aside>
+      </div>
+      <section id="raceGuide" hidden>
+        <h2>参赛与观赛日程</h2>
+        <ol class="raceDates">
+          <li><time>12 月 17 日</time><b>选手签到</b><p>抵汉后检查设备、参加全流程彩排，晚上是欢迎会。</p></li>
+          <li><time>12 月 18 日</time><b>开幕、第一天接单</b><p>智民里开幕。选手 10:00–18:00 接单交付；现场观赛点在平和打包厂。</p></li>
+          <li><time>12 月 19 日</time><b>第二天交付</b><p>10:00 继续接单，18:00 停止提交。两天合计 16 小时。</p></li>
+          <li><time>12 月 20 日</time><b>闭幕联欢</b><p>晚上在光谷举行闭幕 AI 联欢会，凭邀请入场。</p></li>
+        </ol>
+        <div class="raceQuestions">
+          <details><summary>报名时要交什么？</summary><p>个人独立参赛，在线提交报名信息、项目简介、可公开访问的完整演示视频链接。产品体验或项目主页链接选填。线上报名免费，截止与入围时间以赛事公告为准。</p></details>
+          <details><summary>线下怎样选单、交付，订单会被采用吗？</summary><p>现场题目来自客户的轻量需求。选手按能力自选，完成一单后再选下一单。订单分值不同，现场按总分排名。以海报为例，可以先对齐受众和使用场景，再交付客户可以打开的成品。这个例子用来说明流程，具体任务以现场订单为准。</p><p>主办方提供比赛模型。被采用的订单另行签约，费用独立于奖金；完成比赛也可能没有订单被采用。</p></details>
+          <details><summary>线上 100 分和线下总成绩怎么算？</summary><p>线上四项各 25 分，由导师审核，分数不公开。入围后的综合成绩采用另一套计算方式：现场占 40%，市场检验占 60%。市场检验至 2027 年 3 月 31 日，关注实际使用效果、用户反馈和后续改进。</p></details>
+          <details><summary>观众应该去哪里？</summary><p>看开幕先找江岸智民里；看选手现场接真实订单，找青岛路平和打包厂。两处都用蓝色标在武汉地图上。实际入口、预约与观赛办法以官网开票通知为准。</p></details>
+        </div>
+      </section>
+      <footer class="receptionFoot"><div><span id="sourceTitle"></span><span id="scheduleSource"> · 赛程按官网 2026 年 11 月调整更新</span><a href="https://www.dlife.love/saig/#challenge" target="_blank" rel="noopener">赛事官网 ↗</a></div><button id="nextTopic"></button></footer>
+    </main>
+    <script src="assets/places.js"></script>
+    <script src="assets/reception.js"></script>
+    <script src="assets/journal.js"></script><script src="assets/porpoise.js"></script><script src="assets/app.js"></script>
+  </body>
+</html>

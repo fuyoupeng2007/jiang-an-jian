@@ -1,0 +1,90 @@
+.hostDesk,.hostBar,.porpoisePanel {--host-ink:#193e3d;--host-muted:#466465;--host-line:#cbdad1;color:var(--host-ink)}
+.hostDesk {position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(190px,.85fr);align-items:center;gap:12px 4%;max-width:1550px;margin:0 auto 24px;padding:clamp(25px,3vw,52px) clamp(28px,6vw,96px) 22px;border:1px solid #c0d1c8;border-radius:22px;background:#e8efe7;box-shadow:0 7px 24px #1e44300a}
+.hostDesk:before {content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#fcf9ed 2%,#f9f7ebed 36%,#e8efdea8 70%,#d7e4d78c),url("scenes/bg-river.webp") center 56% / cover}
+.hostDesk .hostEyebrow,.hostBar small,.hostChatHead small {font:600 12px/1.5 system-ui,sans-serif;letter-spacing:.15em;color:#436c65}
+.hostDesk .hostEyebrow {margin:0 0 15px}
+.hostCopy h1 {font:normal clamp(44px,5vw,74px)/.99 LongCangLocal,WenKaiLocal,serif;letter-spacing:.015em;margin:0;color:#193e38}
+.hostCopy>p:not(.hostEyebrow){font:normal clamp(15px,1.3vw,19px)/1.6 WenKaiLocal,serif;margin:15px 0}
+.hostAsk {display:flex;align-items:stretch;max-width:490px;background:#fffff8f5;border:1px solid #a4bfb5;border-radius:13px;padding:5px;box-shadow:0 3px 14px #274d4110}
+.hostAsk input {background:transparent;color:var(--host-ink);border:0;min-width:0;flex:1;padding:9px;font:inherit}
+.hostAsk button,.hostBar button,.porpoisePanel #chatForm button {color:white;background:#20584f;border:0;border-radius:9px;padding:9px 15px;font:600 14px/1.4 system-ui,sans-serif;white-space:nowrap}
+.hostPortrait {position:relative;place-self:center;display:grid;justify-items:center;width:min(100%,302px);mix-blend-mode:multiply}
+.hostPortrait img {width:90%;height:auto;max-height:272px;object-fit:contain;animation:hostFloat 5s ease-in-out infinite}
+.hostPortrait span {font:normal 23px/1.2 LongCangLocal,serif;color:#2c595a;letter-spacing:.15em;transform:rotate(-6deg)}
+@keyframes hostFloat {50%{transform:translateY(-5px) rotate(1.5deg)}}
+.hostTopics {grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #a5bdb1;padding-top:13px;margin-top:9px;gap:0}
+.hostTopics button {text-align:left;padding:8px clamp(4px,1.1vw,19px);border:0;border-right:1px solid #adbfaf;background:transparent;box-shadow:none;font:normal clamp(15px,1.35vw,19px)/1.4 WenKaiLocal,serif;border-radius:0;color:#234d42}
+.hostTopics button:after {content:"↗";color:#537969;padding-left:.45em}
+.hostTopics button:last-child {border-right:0}
+.hostTopics button:hover,.hostTopics button:focus-visible {background:#fcfcf0a8}
+.hostBar {grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 16px;margin:0 auto 14px;width:100%;box-sizing:border-box;background:#edf2e8;border:1px solid #c7d5c7;border-radius:13px;text-align:left}
+.hostBar img,.hostChatHead img{width:42px;height:46px;object-fit:contain;mix-blend-mode:multiply}
+.hostBar div {min-width:0;flex:1}
+.hostBar small,.hostBar strong {display:block}
+.hostBar strong {font:normal 17px/1.4 WenKaiLocal,serif;overflow-wrap:anywhere}
+.hostBar button {font-size:13px}
+.porpoisePanel[open] {box-sizing:border-box;display:flex;flex-flow:column;width:min(520px,calc(100vw - 20px));height:min(660px,86dvh);max-height:90dvh;max-width:calc(100vw - 12px);margin:auto;padding:20px;overflow:hidden;background:#fbfaf3;border:1px solid var(--host-line);border-radius:20px;box-shadow:0 24px 100px #1029244d}
+.porpoisePanel::backdrop {background:rgba(17,39,34,.46)}
+.hostChatHead {display:flex;position:static;align-items:center;gap:11px;background:transparent;color:var(--host-ink);padding:0;border:0;box-shadow:none;height:auto;flex:none}
+.hostChatHead h2 {font:normal 27px/1.15 WenKaiLocal,serif;margin:0}
+.hostChatHead button {margin-left:auto;border:1px solid var(--host-line);border-radius:50%;width:36px;height:36px;padding:0;font-size:22px;background:transparent;color:var(--host-ink)}
+#hostContext {margin:10px 0 0;padding:8px 2px;color:var(--host-muted);font:500 13px/1.5 system-ui,sans-serif;border-top:1px solid var(--host-line)}
+.porpoisePanel #conversation {min-height:0;max-height:none;flex:1;overflow-y:auto;overscroll-behavior:contain;padding:4px 4px 8px 0;scrollbar-width:thin}
+.porpoisePanel .chatLine {margin:12px 0;display:flex;align-items:flex-start;gap:6px;max-width:96%;padding:0;background:transparent;font:normal 15px/1.7 system-ui,sans-serif}
+.porpoisePanel .chatLine>img {width:27px;height:32px;object-fit:contain;mix-blend-mode:multiply}
+.hostBubble {border:1px solid #d9dfd4;border-radius:3px 13px 13px 13px;background:#fffffa;padding:9px 13px;overflow-wrap:anywhere}
+.hostBubble p {white-space:pre-line;margin:0;font:inherit;color:inherit}
+.porpoisePanel .chatLine.user {margin:12px 0 12px auto}
+.chatLine.user .hostBubble {background:#dcebe0;border-color:#c4d9ca;border-radius:13px 3px 13px 13px}
+.hostActions,.porpoisePanel #quickChat {display:flex;flex-wrap:wrap;gap:5px}
+.hostActions {margin-top:7px}
+.porpoisePanel #quickChat {border-top:1px solid var(--host-line);padding-top:10px}
+.hostActions button,.porpoisePanel #quickChat button {font:500 13px/1.45 system-ui,sans-serif;margin:0;background:#eef4ec;border:1px solid #b9cfc1;color:#285445;border-radius:8px;padding:5px 8px}
+.porpoisePanel #chatForm {margin-top:9px}
+.porpoisePanel #chatForm input {font:16px/1.4 system-ui,sans-serif}
+#hostStatus {font:12px/1.5 system-ui,sans-serif;color:var(--host-muted);margin:4px 2px 0}
+#hostStatus:empty {display:none}
+@media(max-width:680px){
+ .hostDesk {grid-template-columns:minmax(0,1fr) 106px;column-gap:3px;padding:22px 15px 13px;margin:8px 7px 13px;border-radius:16px}
+ .hostDesk:before{background-position:60% center}
+ .hostCopy {display:contents}.hostCopy .hostEyebrow {grid-column:1;margin:0 0 2px}.hostCopy h1 {grid-column:1;font-size:50px}
+ .hostCopy>p:not(.hostEyebrow){grid-column:1;margin:0;font-size:15px}.hostPortrait {grid-column:2;grid-row:1/4;width:100%}.hostPortrait img {width:100%}.hostPortrait span{font-size:17px}
+ .hostAsk {grid-column:1/-1;width:100%;box-sizing:border-box}.hostTopics {grid-template-columns:repeat(2,1fr);margin-top:0;gap:3px;padding-top:7px}.hostTopics button {font-size:16px}.hostTopics button:nth-child(2){border-right:0}
+ .hostBar {padding:6px 10px;gap:7px;margin-bottom:8px}.hostBar img {width:32px;height:38px}.hostBar button {padding:8px 10px}.hostBar strong {font-size:15px}
+ .porpoisePanel[open] {height:min(710px,88dvh);padding:14px;border-radius:15px}
+}
+@media(prefers-reduced-motion:reduce){.hostPortrait img{animation:none}}
+
+.porpoisePanel #chatForm .primary{width:auto;flex:0 0 auto;margin:0;align-self:stretch}
+.brand .homeLabel{margin-left:7px;border-left:1px solid #b9cabe;padding-left:9px;font:500 13px/1.2 system-ui,sans-serif;letter-spacing:.04em;color:#46645c}
+
+.hostCompanion {position:fixed;bottom:18px;right:16px;z-index:1200;display:flex;align-items:center;gap:5px;border:1px solid #a5beb0;border-radius:32px;background:#fffdf5;padding:5px 13px 5px 6px;color:#254c44;box-shadow:0 3px 15px #21453729;font:600 14px/1.3 system-ui,sans-serif}
+.hostCompanion img {width:32px;height:34px;object-fit:contain;mix-blend-mode:multiply}
+@media(max-width:800px){.hostCompanion{bottom:calc(68px + env(safe-area-inset-bottom));right:10px}}
+
+button.hostPortrait{border:0;background:transparent;padding:0;box-shadow:none;cursor:pointer}button.hostPortrait:hover span{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:680px){.hostDesk{grid-template-columns:minmax(0,1fr) clamp(78px,26vw,106px)}.hostCopy h1{font-size:clamp(28px,9vw,44px)}.hostPortrait span{font-size:clamp(12px,3.6vw,16px);letter-spacing:0;white-space:nowrap}}
+
+/* Riverfront portrait and correspondence panel */
+#birdPanel[open]{--gutter:clamp(14px,3.4vw,26px);width:min(556px,calc(100vw - 18px));height:min(684px,90dvh);padding:0;border:1px solid #c4cec4;border-radius:23px;background:#f8f6ed;box-shadow:0 25px 90px #132f3545}
+#birdPanel .hostChatHead{min-height:88px;box-sizing:border-box;padding:12px var(--gutter);gap:14px;background:linear-gradient(95deg,#d7e7de 0%,#e2ead9ed 47%,#eef1df55),url(scenes/bg-river.webp) right 52%/cover;border-bottom:1px solid #ccd7c9}
+#birdPanel .hostChatHead img{width:60px;height:66px;object-fit:contain;filter:drop-shadow(0 3px 3px #486e681b)}
+#birdPanel .hostChatHead h2{font:normal 37px/1.1 LongCangLocal,WenKaiLocal,serif;color:#21483f}
+#birdPanel .hostChatHead small{display:block;letter-spacing:.12em;font:500 12px/1.75 system-ui;color:#3f6058}
+#birdPanel .hostChatHead button{background:#fffff3b8;border-color:#8da69966;width:32px;height:32px;line-height:1}
+#birdPanel #hostContext{padding:9px var(--gutter);margin:0;border:0;color:#536a60;background:#f0f1e6;font:500 12px/1.5 system-ui}
+#birdPanel #conversation{padding:8px var(--gutter) 10px;scrollbar-color:#afc2b5 transparent}
+#birdPanel .chatLine{width:fit-content;max-width:94%;gap:9px;margin:12px 0;line-height:1.64;letter-spacing:.01em}
+#birdPanel .chatLine.user{margin-left:auto}
+#birdPanel .chatLine img{width:28px;height:34px}
+#birdPanel .hostBubble{background:#fffef8;border:1px solid #dbe1d4;border-radius:4px 17px 17px 17px;padding:10px 14px;color:#293e38;box-shadow:0 2px 5px #45604408}
+#birdPanel .user .hostBubble{border-color:#28594f;background:#28594f;color:#fffdf4;border-radius:17px 4px 17px 17px}
+#birdPanel #quickChat{padding:9px var(--gutter) 0;border:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;flex-shrink:0}
+#birdPanel #quickChat button{flex:none;border-radius:20px;background:#fbfaf3;border:1px solid #c7d3c7;color:#385a4f;padding:6px 11px}
+#birdPanel .hostActions button{background:#eaf1e8;border-radius:10px;border-color:#c6d6c8}
+#birdPanel #chatForm{margin:12px var(--gutter) 15px;display:flex;gap:6px;background:#fffef9;border:1px solid #a7bbaa;border-radius:15px;padding:5px}
+#birdPanel #chatForm:focus-within{outline:2px solid #679486;outline-offset:2px}
+#birdPanel #chatInput{border:0;outline:none;background:transparent;box-shadow:none;min-width:0;flex:1;padding:7px 9px}
+#birdPanel #chatForm button{border-radius:11px}
+#birdPanel #hostStatus:not(:empty){margin:-8px var(--gutter) 9px}
+@media(max-height:500px){#birdPanel .hostChatHead{min-height:46px;padding-block:3px}#birdPanel .hostChatHead img{height:40px;width:40px}#birdPanel .hostChatHead h2{font-size:24px}}

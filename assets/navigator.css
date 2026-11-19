@@ -1,0 +1,1670 @@
+@font-face {
+  font-family: LongCangLocal;
+  src: url(fonts/long.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: WenKaiLocal;
+  src: url(fonts/wen.woff2) format("woff2");
+  font-display: swap;
+}
+:root {
+  --paper: #fffdf5;
+  --pine: #224e45;
+  --cinnabar: #b64938;
+  --soft: #e8e7d7;
+  --muted: #56665c;
+}
+[hidden] {
+  display: none !important;
+}
+body {
+  background: #f4f3e9;
+  color: #273e35;
+}
+.brand,
+h1,
+h2,
+.jCoverLabel h1,
+.cardLabel b {
+  font-family: WenKaiLocal, "Songti SC", serif;
+}
+.brand {
+  font-family: LongCangLocal, WenKaiLocal, serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+body > header {
+  height: 60px;
+  background: #fffdf6;
+  position: relative;
+  z-index: 1020;
+}
+button:disabled {
+  cursor: default;
+}
+button {
+  transition:
+    background-color 0.12s ease,
+    border-color 0.12s ease;
+}
+.primary {
+  background: var(--pine);
+}
+.navMain {
+  padding: 16px clamp(12px, 2vw, 35px);
+  max-width: 1920px;
+}
+.mapLayout {
+  grid-template-columns: clamp(305px, 26vw, 385px) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+.planner {
+  border-color: #c8d0bf;
+  background: var(--paper);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px #29423410;
+}
+.plannerInner {
+  padding: 17px 19px 10px;
+}
+.planHead,
+.alongTitle,
+.sheetHead,
+.sheetFoot,
+.atlasHeading,
+.bookTop,
+.bookFoot,
+.planActions,
+.routeStats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+}
+.planHead {
+  margin: 0 0 12px;
+}
+.planHead h1 {
+  font-family: LongCangLocal, WenKaiLocal, serif;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 1;
+  margin: 0;
+}
+.planHead button,
+.mapTools button,
+.leafArrow {
+  background: var(--paper);
+}
+#swap {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: 22px;
+}
+.stopsPair {
+  position: relative;
+  display: block;
+  border: none;
+  border-radius: 10px;
+  padding: 3px 12px;
+  background: #f0f2e9;
+}
+.stopsPair:before {
+  position: absolute;
+  content: "";
+  top: 31%;
+  height: 38%;
+  left: 15px;
+  border-left: 1px dashed #a9b5a9;
+}
+.stopsPair label {
+  position: relative;
+  padding: 10px 0;
+  gap: 8px;
+}
+.stopsPair label + label {
+  border-top: 1px solid #d8dfd0;
+}
+.stopsPair select {
+  font-weight: 590;
+  font-size: 16px;
+  cursor: pointer;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+.stopsPair span,
+.stopsPair i {
+  flex: none;
+}
+.startDot {
+  background: #488b69;
+}
+.endDot {
+  background: #ce5245;
+}
+.modes,
+.interests {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.modes {
+  margin: 12px 0 8px;
+  border-bottom: 1px solid #e2e5d6;
+  gap: 14px;
+}
+.modes button,
+.interests button,
+.alongTitle button,
+.viaChips button {
+  background: transparent;
+  border: 0;
+  font-size: 14px;
+}
+.modes button {
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  padding: 4px 1px 7px;
+  color: #607063;
+}
+.modes .on {
+  color: var(--pine);
+  font-weight: 650;
+  border-bottom-color: var(--pine);
+}
+.routeStats {
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 9px;
+  row-gap: 0;
+  margin: 9px 0 11px;
+}
+.routeStats strong {
+  font-size: 23px;
+  line-height: 1.2;
+}
+.routeStats small {
+  font-size: 13px;
+  color: var(--muted);
+}
+.planActions > * {
+  flex: 1;
+  white-space: nowrap;
+  padding: 9px 6px;
+  border-radius: 8px;
+}
+.planActions .primary {
+  width: auto;
+}
+.viaChips {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.viaChips:not(:empty) {
+  margin-top: 8px;
+}
+.viaChips button {
+  border: 1px solid #cfd9c9;
+  background: #f2f4eb;
+  border-radius: 14px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+.viaChips .undo {
+  background: transparent;
+  color: #805342;
+  border-color: transparent;
+  text-decoration: underline;
+}
+.along {
+  padding: 10px 19px 12px;
+  border-top: 1px solid #dce1d4;
+}
+.alongTitle h2 {
+  font:
+    600 22px WenKaiLocal,
+    serif;
+}
+.alongTitle button {
+  color: var(--pine);
+  font-size: 13px;
+  padding: 4px 0;
+}
+.interests {
+  margin: 7px 0;
+}
+.interests button {
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.interests .on {
+  background: #e0e9da;
+  color: #284e3d;
+}
+.suggestRow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border-top: 1px dashed #d9dfcf;
+  padding: 7px 0;
+}
+.sightOpen {
+  border: 0;
+  padding: 0;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+  background: transparent;
+}
+.sightOpen img {
+  width: 57px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.sightOpen span {
+  min-width: 0;
+}
+.sightOpen b,
+.sightOpen small {
+  display: block;
+}
+.sightOpen b {
+  font-size: 15px;
+}
+.sightOpen small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.addSuggest {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 20px;
+  background: #f1f4e9;
+  border: 1px solid #d0daca;
+}
+.mapShell {
+  border: 1px solid #b7c5af;
+  border-radius: 16px;
+  isolation: isolate;
+}
+#map {
+  height: calc(100svh - 94px);
+  min-height: 430px;
+  max-height: 1050px;
+  background: #e7ebda;
+  touch-action: none;
+}
+.placeFinder {
+  top: 14px;
+  left: 14px;
+  width: 265px;
+  z-index: 800;
+}
+.placeFinder input {
+  height: 42px;
+  border-radius: 22px;
+  border-color: #bfcbba;
+  background: #fffff9fa;
+  box-shadow: 0 4px 16px #253c391c;
+}
+.mapTools {
+  position: absolute;
+  z-index: 550;
+  top: 14px;
+  right: 13px;
+  display: grid;
+  box-shadow: 0 3px 12px #31483b25;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mapTools button {
+  border: 0;
+  border-radius: 0;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+.mapTools button + button {
+  border-top: 1px solid #e0e4d8;
+}
+.birdCall {
+  position: absolute;
+  z-index: 500;
+  bottom: 24px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #fffdf4;
+  box-shadow: 0 3px 12px #32453430;
+  border-color: #bcc8b3;
+  padding: 4px 13px 4px 5px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 650;
+}
+.birdCall img {
+  width: 32px;
+  height: 33px;
+  object-fit: contain;
+}
+.playBar {
+  position: absolute;
+  z-index: 500;
+  bottom: 25px;
+  left: 125px;
+}
+.playBar button {
+  background: #fffdf3ef;
+  border-color: #c9cebc;
+  padding: 6px 12px;
+  border-radius: 25px;
+  font-size: 14px;
+}
+.pick {
+  z-index: 820;
+  bottom: 75px;
+  left: 14px;
+  right: 14px;
+  max-width: 370px;
+  background: #fffdf7f9;
+  border-radius: 13px;
+  border: 1px solid #c2cbbb;
+  box-shadow: 0 7px 24px #1f312738;
+}
+.pick .pickHead {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 9px;
+  margin: 0;
+}
+.pickHead > img {
+  width: 53px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.pick .pickHead > div {
+  display: block;
+  margin: 0;
+  flex: 1;
+}
+.pickHead small,
+.pickHead strong {
+  display: block;
+}
+.pickHead small {
+  color: #657567;
+  font-size: 11px;
+}
+.pickHead #dismiss {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  background: #edf0e7;
+  font-size: 17px;
+}
+.pick .pickButtons {
+  margin-top: 8px;
+  gap: 4px;
+}
+.pickButtons button {
+  border-radius: 6px;
+  background: #f1f4eb;
+}
+.pickButtons button[data-set="end"] {
+  background: var(--pine);
+  color: white;
+}
+.leaflet-control-attribution {
+  font-size: 10px !important;
+}
+.leaflet-marker-icon {
+  touch-action: manipulation;
+}
+.leaflet-control-zoom {
+  margin-bottom: 18px !important;
+}
+.leaflet-container .landPin svg {
+  filter: drop-shadow(0 1px 2px #3441343d);
+}
+.redDot {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.guideSheet {
+  width: min(470px, calc(100vw - 20px));
+  max-height: 85svh;
+  padding: 17px 19px;
+  background: #fffdf5;
+  border: 1px solid #bbc9b6;
+  border-radius: 16px;
+  box-shadow: 0 12px 65px #172e324d;
+  color: var(--ink);
+}
+dialog::backdrop {
+  background: #1b332e64;
+}
+.sheetHead {
+  height: auto;
+  background: transparent;
+  padding: 0 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+.sheetHead h2 {
+  font-size: 30px;
+}
+.sheetHead small,
+.guideSummary small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.sheetHead > button {
+  border: 0;
+  background: #e9eee2;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  padding: 0;
+}
+.sheetFoot button {
+  flex: 1;
+}
+.sheetFoot,
+.guideSummary {
+  margin: 10px 0;
+}
+.guideSummary h3 {
+  font:
+    600 20px WenKaiLocal,
+    serif;
+  margin: 3px 0;
+}
+.guideSummary p,
+#gpsStatus {
+  font-size: 13px;
+  color: var(--muted);
+}
+.transStep {
+  border-left: 2px solid #d5ddcf;
+  margin: 0 0 0 10px;
+  padding: 8px 8px 8px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.transStep small {
+  flex: none;
+  min-width: 35px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  text-align: center;
+  background: #e7eadb;
+  color: #335740;
+  font-size: 12px;
+}
+.transStep.rail small {
+  background: #f6dfcd;
+  color: #863c2e;
+}
+.transStep.transfer small {
+  background: #e0e9eb;
+  color: #355769;
+}
+.transStep b {
+  font-size: 15px;
+}
+.transStep p,
+.transStep details,
+.prevStep {
+  font-size: 13px;
+  color: #4d6253;
+}
+.transStep.now {
+  border-color: #bd5942;
+  background: #f7edda;
+  border-radius: 0 8px 8px 0;
+}
+.transStep.done {
+  opacity: 0.7;
+}
+.prevStep {
+  margin: 6px 0;
+}
+.tripLeg {
+  margin: 4px 0 8px 16px;
+  font-size: 14px;
+  color: #516754;
+}
+.tripLeg > summary {
+  cursor: pointer;
+  padding: 4px 5px;
+}
+.birdHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.birdHead img {
+  width: 45px;
+  height: 49px;
+  object-fit: contain;
+}
+.birdHead h2 {
+  line-height: 1.1;
+}
+.chatLine {
+  max-width: 92%;
+  margin: 9px auto 9px 0;
+  background: #edf1e3;
+  border-radius: 10px 10px 10px 2px;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+.chatLine.user {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 0;
+  background: #d8e7db;
+  border-radius: 10px 10px 2px 10px;
+}
+.chatLine button,
+#quickChat button {
+  padding: 4px 8px;
+  font-size: 13px;
+  margin: 5px 4px 0 0;
+}
+.guideSheet #conversation {
+  min-height: 95px;
+  max-height: 43svh;
+  overflow: auto;
+}
+#chatForm {
+  display: flex;
+  gap: 5px;
+  margin-top: 12px;
+}
+#chatForm input,
+.atlasHeading input {
+  min-width: 0;
+  background: #fffef9;
+  border: 1px solid #c9d1bd;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+#chatForm input {
+  flex: 1;
+}
+#chatForm .primary {
+  padding: 8px 12px;
+}
+.atlasHeading {
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.atlasHeading p {
+  font:
+    18px WenKaiLocal,
+    serif;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+.atlasHeading h1 {
+  font:
+    clamp(36px, 5vw, 65px)/1.15 LongCangLocal,
+    WenKaiLocal,
+    serif;
+}
+.atlasHeading input {
+  width: min(100%, 310px);
+}
+#atlasStatus {
+  font-size: 13px;
+  color: #58695d;
+  margin: 2px 0 12px;
+}
+.filters {
+  flex-wrap: wrap;
+}
+.gallery article {
+  overflow: hidden;
+}
+.cardLabel b {
+  font-size: 20px;
+}
+.collection {
+  max-width: 1450px;
+}
+body[data-page="postcard"] {
+  background: #26392f;
+}
+.bookMain {
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  max-width: none;
+  min-height: calc(100svh - 60px);
+  padding: 0 0 24px;
+}
+.bookBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.9);
+}
+.bookBackdrop:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #162f3991, #1a322c54 42%, #152b27cc);
+}
+.bookShell {
+  width: min(1100px, 96%);
+  margin: auto;
+  padding: 11px 0 0;
+}
+.bookTop {
+  margin: 0 auto 10px;
+  color: #fffbee;
+}
+.bookTop button,
+.bookFoot button,
+.leafArrow {
+  border-radius: 24px;
+}
+.bookTop button {
+  background: #20372fa9;
+  color: #fffbee;
+  border: 1px solid #ece8d15e;
+  padding: 5px 12px;
+}
+.bookTop span {
+  font:
+    clamp(18px, 2.3vw, 29px) WenKaiLocal,
+    serif;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 6px #193327;
+}
+.spread {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(7px, 2.4vw, 35px);
+  perspective: 1400px;
+}
+.spread #paper {
+  position: relative;
+  display: block;
+  margin: 0;
+  width: min(695px, calc(100% - 100px));
+  max-width: none;
+  min-height: 0;
+  border: 1px solid #e7ddbb;
+  border-radius: 3px;
+  box-shadow:
+    3px 5px 0 #ddd1af,
+    5px 7px 0 #968f73,
+    0 12px 55px #14271991;
+  background: #fff9e8;
+  padding: clamp(6px, 1vw, 13px);
+  animation: none;
+  overflow: visible;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+.sheetImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.97;
+  overflow: hidden;
+  background: #bdc5aa;
+}
+.sheetImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: bookGlide 7s ease-out both;
+}
+.sheetCopy {
+  padding: 10px 16px 13px;
+  position: relative;
+}
+.sheetCopy > span {
+  font:
+    12px/1.5 system-ui,
+    sans-serif;
+  color: #68705c;
+  letter-spacing: 2px;
+}
+.sheetCopy h1 {
+  font:
+    clamp(34px, 4vw, 57px)/1.05 LongCangLocal,
+    WenKaiLocal,
+    serif;
+  color: #29493a;
+  margin: 4px 48px 7px 0;
+}
+.leafLead {
+  font:
+    600 clamp(16px, 1.55vw, 20px)/1.5 WenKaiLocal,
+    serif;
+  margin-bottom: 3px;
+}
+.leafBody {
+  font:
+    clamp(16px, 1.45vw, 19px)/1.6 WenKaiLocal,
+    serif;
+  color: #3f5345;
+  margin-right: 40px;
+}
+.smallSeal {
+  position: absolute;
+  right: 12px;
+  bottom: 13px;
+  display: grid;
+  align-content: center;
+  text-align: center;
+  color: #a9523e;
+  border: 3px double #b5644f;
+  transform: rotate(-8deg);
+  width: 36px;
+  height: 40px;
+  font:
+    16px/0.9 LongCangLocal,
+    serif;
+}
+.leafArrow {
+  border: 1px solid #e6dfbd87;
+  color: white;
+  background: #203a31aa;
+  width: 43px;
+  height: 43px;
+  font: 34px/1 system-ui;
+  padding: 0;
+  flex: none;
+}
+.leafArrow:disabled {
+  opacity: 0.28;
+}
+.filmStrip {
+  display: flex;
+  align-items: center;
+  justify-content: safe center;
+  gap: 6px;
+  overflow: auto;
+  position: relative;
+  max-width: min(100%, 740px);
+  margin: 14px auto 9px;
+  scrollbar-width: thin;
+}
+.filmStrip button {
+  flex: none;
+  position: relative;
+  width: 90px;
+  height: 45px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  padding: 0;
+  background: #243830;
+  overflow: hidden;
+  color: white;
+}
+.filmStrip button.chosen {
+  border-color: #f1ce88;
+}
+.filmStrip img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+}
+.filmStrip span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1px 2px;
+  background: linear-gradient(transparent, #17251edf);
+  font:
+    12px WenKaiLocal,
+    serif;
+  text-align: center;
+}
+.bookFoot {
+  justify-content: center;
+  gap: 8px;
+}
+.bookFoot button {
+  padding: 7px 15px;
+  background: #f8f4e4;
+  border-color: #d6d2be;
+}
+.bookFoot .primary {
+  color: white;
+  background: #294e40;
+  border-color: #c7d0a8;
+}
+.sheetPaper.forward {
+  animation: leafForward 0.6s ease both !important;
+}
+.sheetPaper.backward {
+  animation: leafBack 0.6s ease both !important;
+}
+@keyframes leafForward {
+  from {
+    opacity: 0.4;
+    transform: translateX(18px) rotateY(-19deg) rotate(1deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes leafBack {
+  from {
+    opacity: 0.4;
+    transform: translateX(-18px) rotateY(19deg) rotate(-1deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes bookGlide {
+  from {
+    transform: scale(1.015) translateX(-0.4%);
+  }
+  to {
+    transform: scale(1.055) translateX(0.4%);
+  }
+}
+@media (min-width: 801px) and (max-height: 760px) {
+  .plannerInner {
+    padding-top: 12px;
+  }
+  .sightOpen img {
+    height: 39px;
+  }
+  .suggestRow {
+    padding: 5px 0;
+  }
+  .sheetImage {
+    aspect-ratio: 2.3;
+  }
+  .bookShell {
+    padding-top: 6px;
+  }
+  .sheetCopy {
+    padding-top: 7px;
+  }
+  .spread #paper {
+    max-width: 635px;
+  }
+}
+@media (max-width: 800px) {
+  body {
+    padding-bottom: calc(58px + env(safe-area-inset-bottom));
+  }
+  body > header {
+    height: 46px;
+  }
+  .brand {
+    font-size: 27px;
+  }
+  .brand img {
+    height: 37px;
+    width: 32px;
+  }
+  nav {
+    z-index: 1250;
+    padding-top: 3px;
+  }
+  nav a {
+    padding: 2px 18px;
+  }
+  .navMain {
+    padding: 0 0 8px;
+  }
+  .mapLayout {
+    display: flex;
+    gap: 0;
+  }
+  .mapShell {
+    width: 100%;
+    order: 0;
+    border: 0;
+    border-bottom: 1px solid #b8c6b0;
+    border-radius: 0;
+  }
+  #map {
+    min-height: 260px;
+    height: 43svh;
+    max-height: 520px;
+  }
+  .planner {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .plannerInner,
+  .along {
+    padding: 11px 15px;
+  }
+  .planHead {
+    margin-bottom: 7px;
+  }
+  .planHead h1 {
+    font-size: 29px;
+  }
+  .planHead button {
+    width: 29px !important;
+    height: 29px !important;
+    font-size: 18px !important;
+  }
+  .stopsPair {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .stopsPair label {
+    padding: 6px 0;
+    gap: 8px;
+  }
+  .stopsPair label + label {
+    border-top: 1px solid #dae1d3;
+  }
+  .stopsPair select {
+    font-size: 15px;
+  }
+  .stopsPair span {
+    font-size: 13px;
+  }
+  .modes {
+    margin: 7px 0 6px;
+    gap: 17px;
+  }
+  .modes button {
+    padding-bottom: 4px;
+    font-size: 13px;
+  }
+  .routeStats {
+    margin: 6px 0 8px;
+  }
+  .routeStats strong {
+    font-size: 20px;
+  }
+  .planActions button,
+  .planActions .primary {
+    padding: 8px 5px;
+    font-size: 14px;
+  }
+  .placeFinder {
+    top: 9px;
+    left: 9px;
+    width: 205px;
+    max-width: calc(100% - 65px);
+  }
+  .placeFinder input {
+    height: 36px;
+  }
+  .mapTools {
+    right: 8px;
+    top: 9px;
+  }
+  .mapTools button {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+  .birdCall {
+    left: 9px;
+    bottom: 16px;
+    font-size: 13px;
+    padding: 2px 9px 2px 4px;
+  }
+  .birdCall img {
+    width: 27px;
+    height: 29px;
+  }
+  .playBar {
+    left: 99px;
+    bottom: 17px;
+  }
+  .playBar button {
+    padding: 5px 9px;
+    font-size: 12px;
+  }
+  .pick {
+    bottom: 54px;
+    left: 9px;
+    right: 9px;
+    max-width: 340px;
+  }
+  .pickButtons button {
+    font-size: 12px;
+    padding: 5px 7px;
+  }
+  .alongTitle h2 {
+    font-size: 22px;
+  }
+  .guideSheet {
+    padding: 13px;
+    max-height: 86svh;
+  }
+  .sheetHead h2 {
+    font-size: 25px;
+  }
+  .guideSheet .sheetHead {
+    height: auto;
+  }
+  .guideSummary h3 {
+    font-size: 18px;
+  }
+  .atlasHeading {
+    align-items: flex-start;
+    gap: 7px;
+  }
+  .atlasHeading input {
+    width: 100%;
+  }
+  .shelf .filters {
+    gap: 3px;
+  }
+  .shelf .filters button {
+    font-size: 12px;
+  }
+  .gallery .cardLabel {
+    display: block;
+    padding: 5px 7px;
+  }
+  .gallery .cardLabel b {
+    display: block;
+    font-size: 16px;
+  }
+  .cardLabel button {
+    margin-top: 3px;
+  }
+  .bookMain {
+    min-height: calc(100svh - 104px);
+    padding-bottom: 19px;
+  }
+  .bookShell {
+    width: 100%;
+    padding: 10px;
+  }
+  .bookTop {
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .bookTop button {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+  .bookTop span {
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: 0;
+  }
+  .spread {
+    position: relative;
+    gap: 0;
+  }
+  .spread #paper {
+    width: 100%;
+    max-width: 590px;
+    padding: 6px;
+  }
+  .sheetImage {
+    aspect-ratio: 1.46;
+  }
+  .sheetCopy {
+    padding: 9px 8px 12px;
+  }
+  .sheetCopy h1 {
+    font-size: 38px;
+    margin-right: 27px;
+  }
+  .leafBody {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+  .leafLead {
+    font-size: 16px;
+  }
+  .smallSeal {
+    right: 4px;
+    bottom: 6px;
+    width: 23px;
+    height: 27px;
+    font-size: 11px;
+  }
+  .leafArrow {
+    position: absolute;
+    z-index: 2;
+    top: 21%;
+    height: 36px;
+    width: 28px;
+    border-radius: 5px 0 0 5px;
+    background: #253f34a8;
+    font-size: 25px;
+  }
+  .leafArrow:first-child {
+    left: 5px;
+    border-radius: 0 5px 5px 0;
+  }
+  .leafArrow:last-child {
+    right: 5px;
+  }
+  .filmStrip {
+    justify-content: flex-start;
+    margin-top: 12px;
+  }
+  .filmStrip button {
+    width: 77px;
+    height: 43px;
+  }
+  .bookFoot {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .bookFoot button {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+  .jPanel {
+    font-family: WenKaiLocal, serif;
+    font-size: 17px;
+  }
+  .tripLeg {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sheetPaper.forward,
+  .sheetPaper.backward,
+  .sheetImage img,
+  .landPin.pop {
+    animation: none !important;
+  }
+}
+
+.routeTag {
+  font-weight: 650;
+  max-width: 145px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.relay {
+  margin-left: 12px;
+  font-size: 13px;
+  color: #3d6656;
+  text-underline-offset: 3px;
+}
+#matches button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+}
+#matches button small {
+  color: #61725d;
+  font-size: 11px;
+}
+.legPick {
+  display: flex;
+  gap: 6px;
+  margin: 9px 0;
+  align-items: center;
+}
+.legPick select {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #cbd4c3;
+  border-radius: 7px;
+  background: #f8faef;
+  padding: 6px;
+  font-size: 13px;
+}
+.legPick button,
+#replanFix {
+  padding: 6px 9px;
+  font-size: 13px;
+}
+.sheetFoot {
+  position: sticky;
+  bottom: -1px;
+  background: #fffdf5;
+  padding: 4px 0;
+  z-index: 2;
+}
+#followBox {
+  position: absolute;
+  z-index: 730;
+  left: 12px;
+  bottom: 26px;
+  padding: 12px 15px;
+  background: #fffdf6f7;
+  border: 1px solid #c2ccbb;
+  border-radius: 12px;
+  width: min(405px, calc(100% - 62px));
+  box-shadow: 0 6px 24px #19342636;
+}
+.followHead,
+.followActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.followHead small,
+#followPosition {
+  font-size: 12px;
+  color: #526753;
+}
+.followHead button {
+  padding: 3px 7px;
+  font-size: 12px;
+}
+.followActions {
+  margin-top: 7px;
+}
+.followActions button {
+  padding: 5px 9px;
+  font-size: 13px;
+}
+#followName {
+  display: block;
+  font:
+    600 23px WenKaiLocal,
+    serif;
+  margin: 3px 0;
+}
+#followDetail {
+  font-size: 14px;
+}
+.following .birdCall,
+.following .playBar {
+  display: none;
+}
+.following .pick {
+  bottom: 190px;
+}
+#followPosition:empty {
+  display: none;
+}
+.stationTip {
+  color: #693c2e;
+  background: #fff9e9;
+}
+.guideSheet .transStep details p {
+  margin: 4px 0;
+}
+@media (max-width: 800px) {
+  .following .planner {
+    display: none;
+  }
+  .following #map {
+    height: calc(100svh - 102px - env(safe-area-inset-bottom));
+    max-height: none;
+  }
+  .following #followBox {
+    bottom: 17px;
+    left: 7px;
+    padding: 9px 11px;
+    width: calc(100% - 54px);
+  }
+  .following .pick {
+    bottom: 172px;
+  }
+  .routeTag {
+    max-width: 100px;
+  }
+  .legPick {
+    flex-wrap: wrap;
+  }
+}
+
+.alongTitle > div {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.alongTitle #planTour {
+  background: #e5eddf;
+  padding: 3px 9px;
+  border-radius: 14px;
+}
+.tourDialog {
+  width: min(500px, calc(100% - 20px));
+}
+#tourAnchors {
+  font-size: 14px;
+  margin: 9px 0;
+  color: #526457;
+}
+.tourInputs,
+.tourTopics,
+.goalTimes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 9px 0;
+}
+.tourInputs label,
+.tourTopics label,
+.goalTimes label {
+  font-size: 14px;
+}
+.tourInputs input {
+  width: 55px;
+  appearance: textfield;
+}
+.tourInputs input,
+.tourInputs select,
+.goalTimes select {
+  background: #f9faef;
+  border: 1px solid #c3cebb;
+  border-radius: 5px;
+  padding: 4px;
+}
+.tourTopics label {
+  padding: 3px 6px;
+  background: #f0f3e8;
+  border-radius: 5px;
+}
+.tourTopics input,
+.goalTimes input {
+  accent-color: var(--pine);
+}
+#tourStatus {
+  font-size: 13px;
+  color: #62705e;
+}
+.tourProposal {
+  padding: 12px 0 8px;
+  border-top: 1px dashed #bdcbb9;
+  margin-top: 9px;
+}
+.tourCardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tourCardHead b {
+  font:
+    600 22px WenKaiLocal,
+    serif;
+}
+.tourCardHead span,
+.proposalChain {
+  font-size: 13px;
+  color: #5a685c;
+}
+.proposalChain {
+  margin: 5px 0;
+}
+.proposedStop {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 0;
+}
+.proposedStop img {
+  width: 45px;
+  height: 35px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.proposedStop strong {
+  font-size: 14px;
+}
+.proposedStop p {
+  font-size: 13px;
+}
+.tourProposal > button {
+  margin-top: 7px;
+  padding: 7px 12px;
+  font-size: 14px;
+}
+.postDeparture {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  background: #243e35;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  animation: departShade 0.26s ease both;
+}
+.postDeparture img {
+  width: min(70vw, 660px);
+  max-height: 75svh;
+  object-fit: cover;
+  border: 8px solid #fff5d9;
+  transform-origin: center;
+  animation: departCard 0.26s ease both;
+}
+@keyframes departShade {
+  from {
+    background: #243e3500;
+  }
+  to {
+    background: #243e35d4;
+  }
+}
+@keyframes departCard {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.75) rotate(-4deg);
+  }
+  to {
+    opacity: 0.97;
+    transform: translateY(0) scale(1) rotate(-1deg);
+  }
+}
+
+#nearbyStop {
+  position: absolute;
+  bottom: 75px;
+  left: 14px;
+  z-index: 680;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 6px;
+  background: var(--paper);
+  border: 1px solid #beccb5;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px #2e41332e;
+}
+.following #nearbyStop {
+  bottom: 185px;
+}
+.mapShell:has(#pick:not([hidden])) #nearbyStop {
+  display: none;
+}
+#nearRead {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+}
+#nearThumb {
+  width: 42px;
+  height: 37px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+#nearRead small,
+#nearRead b {
+  display: block;
+}
+#nearRead small {
+  font-size: 11px;
+  color: var(--muted);
+}
+#nearRead b {
+  font-size: 14px;
+}
+#nearAdd {
+  border: 0;
+  padding: 4px 7px;
+}
+.bloom {
+  animation: discovery 0.4s both;
+  transform-origin: bottom left;
+}
+@keyframes discovery {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.8);
+  }
+  70% {
+    transform: translateY(-2px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.nightService {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  color: #965333 !important;
+}
+@media (max-width: 800px) {
+  #nearbyStop {
+    bottom: 58px;
+    left: 8px;
+  }
+  .following #nearbyStop {
+    bottom: 161px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bloom {
+    animation: none;
+  }
+}
+
+.cityCover {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 11px 4px 4px;
+  border-radius: 9px;
+  background: #fcfaec;
+}
+.cityCover img {
+  width: 74px;
+  height: 39px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.cityCover span {
+  font:
+    16px WenKaiLocal,
+    serif;
+}
+.bookTop {
+  flex-wrap: wrap;
+}
+.bookTop span {
+  min-width: 0;
+}
+@media (max-width: 800px) {
+  .cityCover img {
+    width: 53px;
+    height: 32px;
+  }
+  .cityCover span {
+    font-size: 14px;
+  }
+  .cityCover {
+    margin-left: auto;
+    align-self: center;
+  }
+  .atlasHeading h1 {
+    font-size: 34px;
+  }
+}
+
+#citySource {
+  text-align: center;
+  margin: 12px 0 0;
+  color: #f9f7e8;
+  font-size: 13px;
+}
+#arrivalBook {
+  padding: 3px 7px;
+  margin-left: 5px;
+  color: var(--pine);
+  font-size: 12px;
+}
+.tripSources {
+  margin: 5px 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.tripSources summary {
+  cursor: pointer;
+}
+.tripSources p {
+  margin: 7px 0;
+}
+
+.travelArrow {
+  pointer-events: none !important;
+}
+.travelArrow i {
+  display: block;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  filter: drop-shadow(0 0 1px #fff);
+}
+.travelArrow i:before {
+  position: absolute;
+  content: "";
+  left: 2px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 13px solid #b54132;
+}
+.travelArrow i:after {
+  position: absolute;
+  content: "";
+  left: 5px;
+  top: 5px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 6px solid #ffe4d6;
+}

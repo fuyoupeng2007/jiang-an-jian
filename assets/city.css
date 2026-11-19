@@ -1,0 +1,35 @@
+#cityWorkshop{max-width:1280px;margin:auto;padding:20px clamp(14px,4vw,54px) 44px;color:#29493e}
+.cityHeading,.collectionCount,.cityTabs,.cityTools{display:flex;align-items:center;gap:8px}
+.cityHeading,.collectionCount{justify-content:space-between}
+.cityHeading p{margin:0;font:400 15px/1.45 var(--reading-font);color:#65776a}
+.cityHeading h1{margin:3px 0 14px;font:400 clamp(40px,5vw,64px)/1.08 LongCangLocal,serif}
+.cityDesk{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(230px,1fr);border:1px solid #bdc6b6;border-radius:14px;overflow:hidden;background:#fffaf0}
+.cityBoard{position:relative;align-self:stretch;min-height:340px}
+#cityBoard{display:block;width:100%;height:clamp(350px,65vh,630px);touch-action:none;cursor:grab}
+#cityBoard:active{cursor:grabbing}
+.cityTools{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:#fffcf0e6;border:1px solid #c3c9b4;border-radius:15px;padding:3px}
+#cityWorkshop button{color:#2f5346;background:#faf9ed;border:1px solid #c6ceba;border-radius:8px;padding:6px 10px;font:400 15px/1.35 var(--reading-font);cursor:pointer}
+#cityWorkshop button:disabled{opacity:.44;cursor:default}
+.cityTools button{white-space:nowrap;min-width:50px}.cityShelf{min-width:0;padding:clamp(14px,2.3vw,30px)}
+.collectionCount b{font:400 32px/1.1 LongCangLocal,serif}.collectionCount span,.cityTrack span{font:400 14px/1.4 var(--reading-font);color:#667462}
+.cityGuide{min-height:2.8em;margin:10px 0;font:400 16px/1.45 var(--reading-font)}
+#cityWorkshop [aria-pressed=true]{background:#315a48;color:#fffbea}
+#cityPalette{margin:10px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;max-height:38vh;overflow:auto;align-content:start}
+#cityPalette button{display:flex;align-items:center;flex-direction:column;justify-content:flex-start;background:#f8f4e7;border-color:#e1dfcc;font-size:13px;line-height:1.25;min-width:0;padding:3px 3px 6px}
+.townThumb{display:block;width:100%;height:auto;aspect-ratio:6/5;background-size:400% 100%;background-repeat:no-repeat;}
+#cityPalette canvas{width:100%;aspect-ratio:6/5;object-fit:contain}
+.cityTrack{border-top:1px solid #d7dcc7;padding-top:9px}.cityTrack>*{display:block}
+.cityTrack strong{font:600 16px/1.6 var(--reading-font)}
+@media(max-width:760px){#cityWorkshop{padding:12px 10px 60px}.cityDesk{grid-template-columns:1fr}.cityBoard{min-height:230px}#cityBoard{height:clamp(245px,77vw,410px)}.cityShelf{padding:13px}.cityGuide{min-height:0}#cityPalette{grid-template-columns:repeat(5,minmax(0,1fr));max-height:220px}.cityHeading h1{margin-bottom:9px;font-size:42px}}
+.cityTabs[hidden]{display:none}.townMode{display:flex;align-items:center;gap:5px}
+#townVisit{width:min(920px,95vw);box-sizing:border-box;padding:0;border:1px solid #bcc6b1;border-radius:12px;background:#faf7e9;color:#304f41}
+#townVisit::backdrop{background:#162a25a3}
+.tourBar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 13px;font:400 15px/1.4 var(--reading-font)}
+.tourBar strong{font:400 28px/1.2 LongCangLocal,serif}
+#town3d{height:min(62vh,520px);width:100%;background:radial-gradient(ellipse at center,#f4efdf,#e0e5d1);display:grid;place-items:center;text-align:center;touch-action:none}
+#town3d canvas{width:100%;height:100%;cursor:grab;touch-action:none}
+
+#cityPalette{gap:9px}.cityShelf{padding:clamp(18px,2.3vw,30px)}#cityPalette button{line-height:1.45;font-size:14px}.cityTrack{margin-top:14px}.cityGuide{line-height:1.65}.cityHeading p{display:none}@media(max-width:760px){#cityPalette{grid-template-columns:repeat(3,minmax(0,1fr));max-height:30vh}.cityHeading{gap:5px}.cityHeading h1{font-size:clamp(27px,7.6vw,40px)}.townMode{flex-wrap:wrap;justify-content:flex-end}.cityShelf{padding:16px}}
+#modelQuery{width:100%;margin:10px 0 0;padding:9px 12px;border:1px solid #c8cfbf;border-radius:7px;background:#fffdf4;color:#2f5145;font:400 15px/1.4 var(--reading-font)}#noModels{font:400 15px/1.5 var(--reading-font);color:#657765}
+
+@media(max-width:480px){.cityTools{gap:2px;max-width:calc(100% - 6px)}#cityWorkshop .cityTools button{min-width:0;padding:6px 5px;font-size:13px}}
